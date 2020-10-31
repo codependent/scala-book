@@ -11,12 +11,14 @@ object Matching extends App {
 
   count(1)
 
-  def sum(list: List[Int]): Int = list match {
+  val sumFunction : List[Int] => Int = {
     case Nil => 0
-    case head :: tail => head + sum(tail)
+    case head :: tail => head + sumFunction(tail)
   }
 
-  val list = List(1, 2, 3 ,4)
-  println(sum(list))
+  val list = List(1, 2, 3, 4)
+  println(list.head)
+  println(list.tail)
+  println(sumFunction(list))
 
 }
