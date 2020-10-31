@@ -1,7 +1,6 @@
 package com.codependent.scalabook.clazz
 
 object PizzaMain extends App {
-
   println(new Pizza)
-  println(Pizza(4).describe())
+  println(Pizza(4, Normal).describe())
 }

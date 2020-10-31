@@ -1,5 +1,6 @@
 package com.codependent.scalabook.clazz
 
-object PizzaCrust extends Enumeration {
-  val Thin, Normal, Thick = Value
-}
+sealed trait PizzaCrust
+case object Thin extends PizzaCrust
+case object Normal extends PizzaCrust
+case object Thick extends PizzaCrust
