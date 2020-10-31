@@ -1,4 +1,4 @@
-package com.codependent.scalabook.input
+package com.codependent.scalabook.iteration
 
 object Iterating extends App {
 
@@ -8,6 +8,10 @@ object Iterating extends App {
 
   map.foreach({
     entry => println(s"${entry._1}, ${entry._2}")
+  })
+
+  map.foreach({
+    case (key, value) => println(s"$key, $value")
   })
 
 }
