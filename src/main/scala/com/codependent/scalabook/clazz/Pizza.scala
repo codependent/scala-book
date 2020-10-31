@@ -1,3 +1,10 @@
 package com.codependent.scalabook.clazz
 
-case class Pizza(numberOfIngredients: Int = 1, crust: PizzaCrust.Value = PizzaCrust.Normal)
+case class Pizza(numberOfIngredients: Int = 1, crust: PizzaCrust.Value = PizzaCrust.Normal){
+
+  def describe(): String = {
+    val description = s"$numberOfIngredients ingredients. $crust crust"
+    description
+  }
+
+}
