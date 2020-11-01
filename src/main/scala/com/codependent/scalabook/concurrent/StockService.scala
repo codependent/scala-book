@@ -4,6 +4,6 @@ import scala.concurrent.Future
 
 trait StockService {
 
-  def getStockPrice(stock: String) : Future[Double] = ???
+  def getStockPrice(stock: String) : Future[Double]
 
 }
