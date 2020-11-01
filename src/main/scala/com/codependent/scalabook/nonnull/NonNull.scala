@@ -76,5 +76,6 @@ object NonNull extends App {
 
   println(result3)
 
-
+  toIntOption("1").foreach(println)
+  toIntOption("x").foreach(println)
 }
