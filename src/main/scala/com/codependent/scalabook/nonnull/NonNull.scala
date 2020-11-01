@@ -1,5 +1,7 @@
 package com.codependent.scalabook.nonnull
 
+import scala.util.Try
+
 object NonNull extends App {
 
   val toInt = (s: String) => {
@@ -78,4 +80,10 @@ object NonNull extends App {
 
   toIntOption("1").foreach(println)
   toIntOption("x").foreach(println)
+
+  val tryToInt = (s: String) => Try(Integer.parseInt(s))
+
+  println(tryToInt("1"))
+  println(tryToInt("s"))
+
 }
