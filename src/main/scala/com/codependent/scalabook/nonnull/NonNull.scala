@@ -14,7 +14,7 @@ object NonNull extends App {
   println(toInt("1234"))
   println(toInt("a"))
 
-  def defToInt(s : String) = {
+  def defToInt(s: String) = {
     try {
       Integer.parseInt(s.trim)
     } catch {
@@ -53,6 +53,28 @@ object NonNull extends App {
     case None => println("Nothing!")
   }
 
+  val result = for {
+    a <- toIntOption("1")
+    b <- toIntOption("2")
+    c <- toIntOption("3")
+  } yield a + b + c
+
   println(result)
+
+  val result2 = toIntOption("1")
+    .flatMap(a => toIntOption("2")
+      .flatMap(b => toIntOption("3")
+        .flatMap(c => Some(a + b + c))))
+
+  println(result2)
+
+  val result3 = for {
+    a <- toIntOption("1")
+    b <- toIntOption("2")
+    c <- toIntOption("a")
+  } yield a + b + c
+
+  println(result3)
+
 
 }
