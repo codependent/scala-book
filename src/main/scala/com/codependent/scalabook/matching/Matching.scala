@@ -11,7 +11,7 @@ object Matching extends App {
 
   count(1)
 
-  val sumFunction : List[Int] => Int = {
+  val sumFunction: List[Int] => Int = {
     case Nil => 0
     case head :: tail => head + sumFunction(tail)
   }
@@ -20,5 +20,20 @@ object Matching extends App {
   println(list.head)
   println(list.tail)
   println(sumFunction(list))
+
+  val valFunc: Any => String = {
+    case _: Int => "Int"
+    case _: Double => "Double"
+    case _ => "Other"
+  }
+
+  def defFunc: Any => String = {
+    case _: Int => "Int"
+    case _: Double => "Double"
+    case _ => "Other"
+  }
+
+  println(valFunc(1))
+  println(defFunc("John"))
 
 }
