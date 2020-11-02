@@ -21,7 +21,8 @@ object FoldApp extends App {
   }
 
   def get(id: Int): Option[Person] = {
-    getFromCache(id).fold(getFromDatabase(id))(identity(Option(_)))
+    //getFromCache(id).fold(getFromDatabase(id))(identity(Option(_)))
+    getFromCache(id).orElse(getFromDatabase(id))
   }
 
   println(get(2))
