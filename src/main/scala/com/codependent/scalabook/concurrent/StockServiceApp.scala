@@ -37,4 +37,10 @@ object StockServiceApp extends App {
 
   Thread.sleep(5000)
 
+  def superSum(x:Int)(y: Int)(z: Int) = {
+    x + y + z
+  }
+
+  val res = superSum(1)(2)(3)
+  println(res)
 }

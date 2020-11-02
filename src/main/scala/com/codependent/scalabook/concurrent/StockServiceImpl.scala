@@ -7,7 +7,7 @@ import scala.concurrent.Future
 
 class StockServiceImpl extends StockService {
 
-  def getStockPrice(stock: String): Future[Double] = Future {
+  override def getStockPrice(stock: String): Future[Double] = Future {
     val r = scala.util.Random
     val randomSleepTime = r.nextInt(3000)
     println(s"For $stock, sleep time is $randomSleepTime")
