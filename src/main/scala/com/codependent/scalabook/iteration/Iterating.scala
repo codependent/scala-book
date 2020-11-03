@@ -6,12 +6,12 @@ object Iterating extends App {
     "key1" -> "value1",
     "key2" -> "value2")
 
-  map.foreach({
+  map.foreach{
     entry => println(s"${entry._1}, ${entry._2}")
-  })
+  }
 
-  map.foreach({
+  map.foreach{
     case (key, value) => println(s"$key, $value")
-  })
+  }
 
 }
